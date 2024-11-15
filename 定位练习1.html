@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .big {
+      width: 980px;
+      height: 400px;
+      background-color: red;
+      position: relative;
+      margin: auto;
+      /* transition: all 1s; */
+    }
+    .left {
+      /* width: 20px;
+      height: 20px; */
+      /* background-color: red; */
+      position: absolute;
+      top: 150px;
+      left: 10px;
+      font-size: 50px;
+      cursor: pointer;
+    }
+
+    .right {
+      /* width: 20px;
+      height: 20px; */
+      /* background-color: red; */
+      position: absolute;
+      top: 150px;
+      right: 10px;
+      font-size: 50px;
+      cursor: pointer;
+
+    }
+  </style>
+</head>
+<body>
+  <div class="big">
+    <div class="left"><</div>
+    <div class="right">></div>
+  </div>
+
+
+
+  <script>
+    const big = document.querySelector('.big')
+    let index=0
+    document.querySelector('.right').addEventListener('click',() => {
+      let arr =['red','yellow','blue','green','skyblue','pink']
+      big.style.backgroundColor=arr[index]
+       index = index+1
+       if(index===arr.length){
+        index=0
+       }
+      
+    })
+
+    document.querySelector('.left').addEventListener('click',() => {
+      let arr =['red','yellow','blue','green','skyblue','pink']
+      if(index===0){
+        index=arr.length
+       }
+      big.style.backgroundColor=arr[index]
+       index = index-1
+
+       
+     
+      
+    })
+  </script>
+  
+</body>
+</html>
